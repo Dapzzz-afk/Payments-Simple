@@ -11,13 +11,26 @@ window.addEventListener("load", () => {
     }, 1200); // waktu loading simulasi
 });
 
-window.addEventListener('load', function () {
-        const audio = document.getElementById('bg-music');
-        audio.muted = false;
-        audio.play().catch(function (error) {
-            console.log('Autoplay dibatasi browser:', error);
-        });
+const audio = document.getElementById('bg-music');
+
+    // Musik dimulai dalam kondisi mute dan autoplay
+    audio.play().catch(err => {
+        console.warn('Autoplay gagal:', err);
     });
+
+    // Fungsi untuk unmute saat pengguna berinteraksi
+    const enableSound = () => {
+        audio.muted = false;
+        audio.play();
+        document.removeEventListener('click', enableSound);
+        document.removeEventListener('scroll', enableSound);
+        document.removeEventListener('keydown', enableSound);
+    };
+
+    // Dengarkan interaksi pengguna
+    document.addEventListener('click', enableSound);
+    document.addEventListener('scroll', enableSound);
+    document.addEventListener('keydown', enableSound);
 
 const payments = [
     {
