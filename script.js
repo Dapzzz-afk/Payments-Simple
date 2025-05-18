@@ -11,6 +11,14 @@ window.addEventListener("load", () => {
     }, 1200); // waktu loading simulasi
 });
 
+window.addEventListener('load', function () {
+        const audio = document.getElementById('bg-music');
+        audio.muted = false;
+        audio.play().catch(function (error) {
+            console.log('Autoplay dibatasi browser:', error);
+        });
+    });
+
 const payments = [
     {
         nama: "Bank BCA",
