@@ -9,7 +9,7 @@
             setTimeout(() => {
                 loader.classList.add('hidden');
                 // Don't explicitly show 'about' here, it's handled by initial classes
-            }, 2000); // Keep loader a bit longer for effect
+            }, 1000); // Keep loader a bit longer for effect
         });
 
 const audio = document.getElementById('bg-music');
