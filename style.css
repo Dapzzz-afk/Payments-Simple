@@ -35,7 +35,7 @@ h1 {
 
 .payment-item {
     padding: 15px;
-    border: 15px solid green;
+    border: 5px solid pink;
     border-radius: 10px;
     background-color: #fafafa;
     transition: transform 0.2s;
