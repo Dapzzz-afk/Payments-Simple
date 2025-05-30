@@ -1,15 +1,16 @@
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        const loader = document.getElementById("loader");
-        const main = document.getElementById("main-content");
+// --- Initial Page Load ---
+        window.addEventListener('load', () => {
+            // Ensure aboutPage starts visible & paymentPage hidden if JS enabled
+            aboutPage.classList.add('active');
+            aboutPage.classList.remove('hidden');
+            paymentPage.classList.add('hidden');
+            paymentPage.classList.remove('active');
 
-        loader.style.opacity = "0";
-        setTimeout(() => {
-            loader.style.display = "none";
-            main.classList.add("show");
-        }, 500);
-    }, 1200); // waktu loading simulasi
-});
+            setTimeout(() => {
+                loader.classList.add('hidden');
+                // Don't explicitly show 'about' here, it's handled by initial classes
+            }, 2000); // Keep loader a bit longer for effect
+        });
 
 const audio = document.getElementById('bg-music');
 
